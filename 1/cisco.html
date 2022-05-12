@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <meta name="description" content="Programбаза - это портал о программах" />
+    <meta name="keywords" content="программы, утилиты" />
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <main>
+        <header>
+            <div class="logo">
+                <div class="logo_text">
+                    <h1><a href="index.html">ProgramБаза</a></h1>
+                    <h2>Программы - наше все!</h2>
+                </div>
+            </div>
+
+            <div class="menubar">
+
+                <ul class="menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="selected"><a href="films.html">Программы</a></li>
+                    <li><a href="Series.html">Утилиты</a></li>
+                    <li><a href="rating.html">Рейтинг программ</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="site_content">
+            <div class="sidebar_container">
+                <div class="sidebar">
+                    <h2>Поиск</h2>
+                    <form action="#" method="post" id="search_field">
+                        <input type="search" name="search_field" placeholder="ваш запрос" />
+                        <input type="submit" class="btn" value="найти" />
+                    </form>
+                </div>
+
+                <div class="sidebar">
+                    <h2>Вход</h2>
+                    <form action="#" method="post" id="login">
+                        <input type="text" name="login_field" placeholder="логин" />
+                        <input type="password" name="password_field" placeholder="пароль" />
+                        <input type="submit" class="btn" value="вход" />
+                        <div class="lables_passreg_text">
+                            <span><a href="#">забыли пароль?</a></span> | <span><a href="#">регистрация</a></span>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="sidebar">
+                    <h2>Новости</h2>
+                    <span>31.02.2018</span>
+                    <p>Мы запустили расширенный поиск</p>
+                    <div class="lables_4itatb">
+                        <a href="#">читать</a>
+                        </div>
+                </div>
+
+                <div class="sidebar">
+                    <h2>Рейтинг программ</h2>
+                    <ul>
+                        <li><a href="cisco.html">Packet Tracer</a><span class="rating_sidebar">8.1</span></li>
+                        <li><a href="virtual.html">VirtualBox</a><span class="rating_sidebar">8.0</span></li>
+                        <li><a href="autocad.html">AutoCAD</a><span class="rating_sidebar">7.5</span></li>
+                        <li><a href="visual.html">Visual Studio</a><span class="rating_sidebar">7.4</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content">
+                <h1>Packet Tracer</h1>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/htGsfaNSuX4" allowfullscreen></iframe>
+
+                <div class="info_film_page">
+                    <span class="label">Рейтинг: </span><span class="value">8.0 / 10</span>
+                    <span class="label">Год: </span><span class="value">2021</span>
+                    <span class="label">Разработчик: </span><span class="value">Cisco</span>
+                </div>
+                <hr>
+                <h2>Описание Cisco Packet Tracer</h2>
+
+                <div class="descriptions_film">
+                <div class="description_film img"><img src="assets/img/Cisco.png"></div>
+                    Packet Tracer — симулятор сети передачи данных, выпускаемый фирмой Cisco Systems. 
+                    Позволяет делать работоспособные модели сети, настраивать (командами Cisco IOS)
+                    маршрутизаторы и коммутаторы, взаимодействовать между несколькими пользователями 
+                    (через облако).
+                </div>
+
+                <hr>
+                <h2>Отзывы об Cisco Packet Tracer</h2>
+
+                <div class="reviews">
+                    <div class="review_name">
+                        Максим
+                    </div>
+                    <div class="review_text">
+                        Отличная программа, пользуюсь.
+                    </div>
+                </div>
+
+                <div class="reviews">
+                    <div class="review_name">
+                        Артур
+                    </div>
+                    <div class="review_text">
+                        Офигенная программа!
+                    </div>
+                </div>
+
+                <div class="send">
+                    <form action="#" method="post" id="review">
+                        <input type="text" name="review_name" placeholder="ваше имя">
+                        <textarea name="review_text"></textarea>
+                        <input type="submit" class="btn" value="отправить">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <footer>
+            <p>
+                <a href="index.html">Главная</a> |
+                <a href="films.html">Программы</a> |
+                <a href="Series.html">Утилиты</a> |
+                <a href="rating.html">Рейтинг программ</a> |
+                <a href="contact.html">Контакты</a>
+            </p>
+            <p>programpoisk.ru</p>
+        </footer>
+    </main>
+
+</body>
+</html>

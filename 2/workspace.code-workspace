@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\017 known-master"
+		},
+		{
+			"path": "..\\Бурная версточка"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Бурная версточка"
+	}
+}
