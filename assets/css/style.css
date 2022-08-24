@@ -61,4 +61,5 @@ h2, a{
     color: azure;
     margin-bottom: 5px;
     text-decoration:none;
+    display: inline-block;
 }
