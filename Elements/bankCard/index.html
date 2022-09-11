@@ -9,23 +9,35 @@
     <link rel="stylesheet" href="/Elements/bankCard/assets/style.css">
 </head>
 <body>
-<div class="center">
-
-    <div class="bankCard-container">
-        <div class="bankCard-wrapper">
-            <div class="bankCardFront">
-            <p class="debit">debit</p>
-            <img src="/Elements/bankCard/assets/img/SwedBank 1.svg" alt="" class="cardLogo">
-            <img src="/Elements/bankCard/assets/img/Chip.svg" alt="" class="cardChip">
-            <img src="/Elements/bankCard/assets/img/Wave.svg" alt="" class="cardWave">
-            <img src="/Elements/bankCard/assets/img/MasterCard.svg" alt="" class="masterCard">
+    <form action="">
+    <div class="center">
+        <div class="bankCard-container">
+            <div class="bankCard-wrapper">
+                <div class="bankCardFront">
+                    <p class="debit">debit</p>
+                    <img src="/Elements/bankCard/assets/img/SwedBank 1.svg" alt="" class="cardLogo">
+                    <img src="/Elements/bankCard/assets/img/Chip.svg" alt="" class="cardChip">
+                    <img src="/Elements/bankCard/assets/img/Wave.svg" alt="" class="cardWave">
+                    <img src="/Elements/bankCard/assets/img/MasterCard.svg" alt="" class="masterCard">
+                </div>
+                <div class="bankCardBack">
+                    <p class="infoCard1">This card is issued by Swedbank pursuant to licence by Mastercard International.⠀⠀IDEMIA 8 1817964A 02/21 ICA3756</p>
+                    <div class="magneticTape"></div>
+                        <input type="text" class="cardNumber" id="num" placeholder="XXXX XXXX XXXX XXXX" autocomplete="off">
+                        <input type="text" class="cardName" placeholder="Owner Name">
+                        <h1 class="monthYear">month/year</h1>
+                        <h1 class="cvc">cvc2</h1>
+                        <h1 class="valid">valid thru</h1>
+                        <input type="text" class="cardPeriod" id="date" placeholder="XX/XX" autocomplete="off">
+                        <input type="number" class="cardCVC" id="cvc" placeholder="XXX">
+                        <img src="/Elements/bankCard/assets/img/Holographic.svg" alt="" class="debitHolo">
+                        <p class="infoCard2">SWEDBANK: ESTONIA, TEL. +372 631 0310, LATVIA, TEL.+371 6744 4444, LITHUANIA, TEL +370 5 268 4444</p>
+                </div>
             </div>
-            <div class="bankCardBack">
-                
-            </div>
-        </div>
+        </div> 
     </div>
-
-</div>
+    <input class="button" type="button" value="Send data">
+</form>
+    <script src="/Elements/bankCard/assets/custom.js"></script>
 </body>
 </html>

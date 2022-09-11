@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+html{
+    background: linear-gradient(253.24deg, rgba(255, 174, 174, 0.42) 1.42%, #C2F4FF 100%);
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    zoom: 150%;
+}
+
+#snake-field{
+    display: inline-block;
+}
+
+#snake-renew, #snake-start{
+    position: absolute;
+    width: 150px;
+    padding: 15px;
+    color: white;
+    background-color: #068606;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 110px;
+    margin-right: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#snake-renew{
+    background-color: #e84040;
+}
+
+#snake-renew:hover, #snake-start:hover{
+    background-color: #16a416;
+}
+
+#snake-renew:hover{
+    background-color: #ff6262;
+}
+
+.game-table{
+    border-collapse: collapse;
+    background-color: #3e3e3e;
+}
+
+td.game-table-cell{
+    width: 15px;
+    height: 15px;
+    bottom: 1px dotted #eee;
+}
+
+.snake-unit{
+    background-color: #068606;
+}
+
+.food-unit{
+    background-color: red;
+}
+
+.wrap{
+    margin: 30px auto 0;
+    text-align: center;
+}
