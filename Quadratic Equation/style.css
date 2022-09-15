@@ -3,6 +3,7 @@
 html{
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 body{
@@ -24,6 +25,7 @@ body{
     justify-content: center;
     border: 1px solid;
     box-shadow:0 0 5px #000; 
+    zoom: 150%;
 }
 
 .values{
