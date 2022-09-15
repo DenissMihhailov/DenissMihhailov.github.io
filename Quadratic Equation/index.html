@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+    <h1 class="cal">Калькулятор квадратных уравнений</h1>
+    <div class="values">
+    <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="a">a² +
+    <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="b">b +
+    <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="c">c = 0
+    </div>
+    <p id="info" class="unvisible">&nbsp</p>
+    <div class="send">
+        <div id="button"><p>Получить ответ</p></div>
+    </div>
+</div>
+</div>
+<script src="js.js"></script>
+</body>
+</html>

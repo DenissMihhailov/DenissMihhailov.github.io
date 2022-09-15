@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    background-color: white;
+    width: 520px;
+    height: 320px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    box-shadow:0 0 5px #000; 
+}
+
+.values{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    zoom: 130%;
+}
+
+h1{
+    margin-top: 5px;
+    margin-bottom: 70px;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+}
+
+input{
+    width: 30px !important;
+    text-align: right;
+    
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+p{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.send{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button{
+    margin-top: 40px;
+    background-color: rgb(12, 161, 12);
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 3px;
+    text-align: center;
+    box-shadow:0 0 3px #000; 
+}
+
+#button p{
+    margin: 0;
+    margin-top: 7px;
+}
+
+#button:hover{
+    background-color: rgb(16, 197, 16);
+}
+
+.success{
+    color: green;
+}
+
+.error{
+    color: red;
+}
