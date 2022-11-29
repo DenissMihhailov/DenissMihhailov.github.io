@@ -1,0 +1,37 @@
+html body{
+    margin: 0;
+    padding: 0;
+    background-color: #305490;
+}
+
+table{
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0.1vw;
+}
+
+
+th{
+    position: sticky;
+    background-color: #000393;
+    color: #fff;
+    text-align: center;
+	padding: 1% 0.2%;
+	font-size: 1.4vw;
+	font-weight: bold;
+	border: 0.1vw solid rgb(247, 243, 243);
+}
+
+td { 
+    color: #fff; 
+    text-align: center; 
+    padding: 1.5% 0.2%;
+    font-size: 1.4vw;
+    font-weight: bold;
+    border: 0.1vw solid #F7F3F3;
+    word-wrap: break-word;
+   }
+
+.main-col{
+    padding: 1% 0;
+}
