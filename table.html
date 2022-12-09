@@ -8,19 +8,18 @@
     <link rel="stylesheet" href="table.css">
 </head>
 <body>
-    <table>
+    <table id="table">
         <colgroup>
             <col style="width: 18%;"/>
             <col style="width: 5%;"/>
             <col style="width: 22%;">
             <col span="5" style="width: 11%"/> <!-- 55% -->
         </colgroup>
-        <tbody>
-        <tr>
+        <tr class="header">
             <th class="main-col" colspan="3">1 KORRUS</th>
             <th class="main-col" colspan="5">VASTUVÕTUAEG</th>
         </tr>
-        <tr>
+        <tr id="titles" class="header">
             <th>NIMI, PEREKONNANIMI</th>
             <th>№ KAB</th>
             <th>ERIALA</th>
@@ -28,79 +27,11 @@
             <th>KOLMAPÄEV</th><th>NELJAPÄEV</th>
             <th>REEDE</th>
         </tr>
-        <tr>
-            <td>A. TAŠKIN</td>
-            <td>202</td>
-            <td>DERMATOVENEROLOOG</td>
-            <td>10:00-17:30</td>
-            <td>10:00-17:30</td>
-            <td></td>
-            <td>10:00-17:30</td>
-            <td>08:00-15:30</td>
-        </tr>
-        <tr>
-            <td>A. TAŠKIN</td>
-            <td>204</td>
-            <td>PEREKONDLIKU NÕUSTAMINE ARST</td>
-            <td colspan="5">EELNEVAL KOKKULAPPEL</td>
-        </tr>
-        <tr>
-            <td>PROTSEDUURI KABINET</td>
-            <td>6</td>
-            <td>PSÜHHIAATER</td>
-            <td>10:00-17:30</td>
-            <td>10:00-17:30</td>
-            <td>08:00-15:30</td>
-            <td>10:00-17:30</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>A. TAŠKIN</td>
-            <td>6</td>
-            <td>PSÜHHIAATER</td>
-            <td>10:00-12:30 15:00-17:30</td>
-            <td>10:00-17:30</td>
-            <td></td>
-            <td>10:00-17:30</td>
-            <td>08:00-15:30</td>
-        </tr>
-        <tr>
-            <td>A. TAŠKIN</td>
-            <td>6</td>
-            <td>PSÜHHIAATER</td>
-            <td>10:00-17:30</td>
-            <td></td>
-            <td>08:00-15:30</td>
-            <td>10:00-17:30</td>
-            <td>08:00-15:30</td>
-        </tr>
-        <tr>
-            <td>A. TAŠKIN</td>
-            <td>6</td>
-            <td>PSÜHHIAATER</td>
-            <td colspan="5">VASTUVÕTTU EI TOIMU</td>
-        </tr>
-        <tr>
-            <td>A. TAŠKIN</td>
-            <td>6</td>
-            <td>PSÜHHIAATER</td>
-            <td>10:00-17:30</td>
-            <td>10:00-17:30</td>
-            <td>08:00-15:30</td>
-            <td>10:00-17:30</td>
-            <td>08:00-15:30</td>
-        </tr>
-        <tr>
-            <td>A. TAŠKIN</td>
-            <td>6</td>
-            <td>PSÜHHIAATER</td>
-            <td>10:00-17:30</td>
-            <td>10:00-17:30</td>
-            <td>08:00-15:30</td>
-            <td>10:00-17:30</td>
-            <td>08:00-15:30</td>
-        </tr>
+        <tbody id="tableElements">
     </tbody>
     </table>
+
+    <script type="module" src="table.js"></script>
+    <script type="module" src="verstka.js"></script>
 </body>
 </html>

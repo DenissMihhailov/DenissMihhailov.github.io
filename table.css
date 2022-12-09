@@ -7,31 +7,38 @@ html body{
 table{
     width: 100%;
     table-layout: fixed;
-    border-spacing: 0.1vw;
+    border-spacing: 0;
+    border: 0.1vw solid;
 }
 
 
+
+.sticky{
+    position: static;
+    top: 0;
+}
+
 th{
-    position: sticky;
+    top: 0;
     background-color: #000393;
     color: #fff;
     text-align: center;
-	padding: 1% 0.2%;
 	font-size: 1.4vw;
 	font-weight: bold;
 	border: 0.1vw solid rgb(247, 243, 243);
+    height: 4.5vw;
 }
 
 td { 
     color: #fff; 
     text-align: center; 
-    padding: 1.5% 0.2%;
     font-size: 1.4vw;
     font-weight: bold;
     border: 0.1vw solid #F7F3F3;
     word-wrap: break-word;
+    height: 4.5vw;
    }
 
 .main-col{
-    padding: 1% 0;
+    height: 3vw;
 }
