@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 //   const savedLang = localStorage.getItem("lang") || "en";
 //   changeLanguage(savedLang);
 
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
     const burgerBtn = document.querySelector('.burger-btn');
     const burgerImg = burgerBtn.querySelector('img');
     const buttonsPhone = document.querySelectorAll('.navbar .button:not(.burger-btn)');
@@ -148,29 +150,158 @@ function resetTouch() {
     touchEndY = null;
 }
 
+// function setResponsiveFrame() {
+//   const img = document.getElementById("frame-img");
+//   const wrapper = document.querySelector(".frame-wrapper");
+//   const width = window.innerWidth;
+//   const height = window.innerHeight;
+//   const aspectRatio = width / height;
+
+//   if (width <= 1024 && height >= 600 && aspectRatio <= 0.75) {
+//     img.src = "img/frame-vertical-animated.svg";
+//     wrapper.style.height = "90%";
+//   } else {
+//     img.src = "img/frame-animated.svg";
+//     wrapper.style.height = "100%";
+//   }
+// }
+
+// window.addEventListener("load", setResponsiveFrame);
+// window.addEventListener("resize", setResponsiveFrame);
+
+let prevScreenHeight = window.screen.height;
+let prevScreenWidth = window.screen.width;
+
+let prevInnerHeight = window.innerHeight;
+let prevInnerWidth = window.innerWidth;
+
+const targetEl = document.querySelector('.main-header-container');
+
+function isElementVisible(el) {
+  if (!el) return false;
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight && rect.bottom > 0;
+}
+
+function setRealVH() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  prevScreenHeight = window.screen.height;
+  prevScreenWidth = window.screen.width;
+  prevInnerHeight = window.innerHeight;
+  prevInnerWidth = window.innerWidth;
+}
+
+function maybeSetRealVH() {
+  if (!isElementVisible(targetEl)) return;
+
+  const currScreenHeight = window.screen.height;
+  const currScreenWidth = window.screen.width;
+  const currInnerHeight = window.innerHeight;
+  const currInnerWidth = window.innerWidth;
+
+  const screenChanged =
+    currScreenHeight !== prevScreenHeight || currScreenWidth !== prevScreenWidth;
+
+  const innerChanged =
+    Math.abs(currInnerHeight - prevInnerHeight) > 50 ||
+    Math.abs(currInnerWidth - prevInnerWidth) > 50;
+
+  if (screenChanged || innerChanged) {
+    setRealVH();
+  }
+}
+
+let resizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(maybeSetRealVH, 150);
+});
+
+window.addEventListener('load', () => {
+  setRealVH();
+  setTimeout(setRealVH, 100);
+  setTimeout(setRealVH, 300);
+});
+
+window.addEventListener('scroll', () => {
+  maybeSetRealVH()
+});
+
+window.addEventListener('orientationchange', () => {
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+
+  setTimeout(() => {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    setRealVH();
+  }, 500);
+});
+
+
+
+
+
+
+
+
 
 
 // Page changer
 
-  const sections = document.querySelectorAll(".page-section");
-  const buttons = {
-    about: document.querySelector(".about-btn"),
-    tiba: document.querySelector(".tiba-btn"),
-    clients: document.querySelector(".clients-btn"),
-  };
+function scrollToWrapperTopSmooth() {
+  const wrapperTop = wrapper.getBoundingClientRect().top + window.pageYOffset;
+  window.scrollTo({
+    top: wrapperTop,
+    behavior: 'smooth'
+  });
+}
 
-  function showSection(sectionClass) {
-    sections.forEach(sec => sec.classList.remove("active"));
-    document.querySelector(`.${sectionClass}-container`).classList.add("active");
-     Object.values(buttons).forEach(btn => btn.classList.remove("active"));
-    buttons[sectionClass].classList.add("active");
+  const wrapper = document.querySelector('.page-sections-wrapper');
+const sections = document.querySelectorAll('.page-section');
+const buttons = {
+  about: document.querySelector('.about-btn'),
+  tiba: document.querySelector('.tiba-btn'),
+  clients: document.querySelector('.clients-btn'),
+};
+
+function updateWrapperHeight() {
+  const activeSection = wrapper.querySelector('.page-section.active');
+  if (activeSection) {
+    wrapper.style.height = activeSection.scrollHeight + 'px';
+  }
+}
+
+let isInitialLoad = true;
+
+function showSection(sectionClass) {
+  sections.forEach(sec => sec.classList.remove('active'));
+  const next = document.querySelector(`.${sectionClass}-container`);
+  next.classList.add('active');
+
+  Object.values(buttons).forEach(btn => btn.classList.remove('active'));
+  buttons[sectionClass].classList.add('active');
+
+   setTimeout(() => {
+      updateWrapperHeight();
+  }, 100);
+
+  if (!isInitialLoad) {
+        scrollToWrapperTopSmooth();    
   }
 
-  buttons.about.addEventListener("click", () => showSection("about"));
-  buttons.tiba.addEventListener("click", () => showSection("tiba"));
-  buttons.clients.addEventListener("click", () => showSection("clients"));
+  isInitialLoad = false;
+}
 
-  showSection("about");
+window.addEventListener('load', updateWrapperHeight);
+window.addEventListener('resize', updateWrapperHeight);
+
+buttons.about.addEventListener('click', () => showSection('about'));
+buttons.tiba.addEventListener('click', () => showSection('tiba'));
+buttons.clients.addEventListener('click', () => showSection('clients'));
+
+showSection('about');
 });
 
 // Change Language Scripts
@@ -207,39 +338,25 @@ function changeLanguage(lang) {
 function animateButtonResize(button, newText) {
     const p = button.querySelector('p');
     const originalHTML = p.innerHTML;
-
-    // ✅ Сброс фиксированной ширины перед новой анимацией
     button.style.width = '';
-
-    // Замеряем текущую ширину
     const startWidth = button.offsetWidth;
-
-    // Ставим новый текст для измерения
     p.innerHTML = newText;
-
-    // Замеряем новую ширину
     const endWidth = button.offsetWidth;
-
-    // Возвращаем старый текст для плавного старта
     p.innerHTML = originalHTML;
 
-    // Фиксируем ширину
     button.style.width = startWidth + 'px';
 
-    // Перерисовка + запуск анимации
     requestAnimationFrame(() => {
         p.innerHTML = newText;
         button.style.width = endWidth + 'px';
     });
 
-    // Гарантированное снятие фиксации ширины после анимации
     const clearWidth = () => {
         button.style.width = '';
         button.removeEventListener('transitionend', clearWidth);
         clearTimeout(fallbackTimeout);
     };
 
-    // Fallback таймер (чтобы снять фиксацию если transitionend не сработает)
     const fallbackTimeout = setTimeout(clearWidth, 600);
 
     button.addEventListener('transitionend', clearWidth);
@@ -257,6 +374,41 @@ document.querySelectorAll(".language-change-btn").forEach(btn => {
         changeLanguage(lang);
     });
 });
+
+// function applyLandscapeStyles() {
+//   const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+//   const isMobile = window.matchMedia("(pointer: coarse) and (hover: none)").matches;
+//   const isSmallWidth = window.innerWidth <= 896;
+
+//   if (isLandscape && isMobile && isSmallWidth) {
+//     const style = document.createElement("style");
+//     style.id = "landscape-style"; // чтобы не дублировать
+
+//     style.textContent = `
+//       .clients-container p, .about-container p, .tiba-container p {
+//         font-size: 12px !important;
+//       }
+//       h1, h2 {
+//         font-size: 20px !important;
+//       }
+//       .tiba-container h3 {
+//         font-size: 14px !important;
+//       }
+//     `;
+
+//     // Удаляем предыдущий стиль, если есть
+//     document.getElementById("landscape-style")?.remove();
+//     document.head.appendChild(style);
+//   } else {
+//     // Удаляем стиль, если условия больше не выполняются
+//     document.getElementById("landscape-style")?.remove();
+//   }
+// }
+
+// window.addEventListener("load", applyLandscapeStyles);
+// window.addEventListener("resize", applyLandscapeStyles);
+// window.addEventListener("orientationchange", applyLandscapeStyles);
+
 
 
 

@@ -6,19 +6,32 @@
     <title>OÜ AnnikiForsi</title>
     <link rel="icon" type="image/svg+xml" href="img/logo.svg">
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
-    <div class="main-header-container">
-        <div class="frame-wrapper">
-            <picture>
-                <source srcset="img/frame-vertical-animated.svg" media="(max-width: 670px)">
-                <img src="img/frame-animated.svg" alt="Frame" class="frame">
-                <!-- <object data="img/frame.svg" type="image/svg+xml"></object> -->
-            </picture>
-            <img src="img/logo-animated.svg" alt="Logo" class="logo">
-        </div>
-    </div>
+   <div class="main-header-container">
+  <div class="frame-wrapper">
+   <picture>
+  <!-- Вертикальная рамка в портретной ориентации -->
+  <source
+    srcset="img/frame-vertical-animated.svg"
+    media="(orientation: portrait)"
+  />
+
+  <!-- Дополнительное условие для портретных устройств -->
+  <source
+    srcset="img/frame-vertical-animated.svg"
+    media="(max-width: 1024px) and (min-height: 600px) and (max-aspect-ratio: 3/4)"
+  />
+
+  <!-- Горизонтальная рамка по умолчанию -->
+  <img class="frame" id="frame-img" src="img/frame-animated.svg" alt="Frame" />
+</picture>
+
+    <img src="img/logo-animated.svg" alt="Logo" class="logo" />
+  </div>
+</div>
 
         <div class="content-container">
             <div class="overlay"></div>
@@ -73,6 +86,8 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="page-sections-wrapper">
     
             <div class="about-container page-section active">
                 <h1 data-key="aboutTitle">Who we are</h1>
@@ -84,11 +99,11 @@
                 
                 <h2 data-key="aboutTitle2">Let's stay connected!</h2>
                 <p data-key="aboutPhone"><b>Phone:</b> (<span>372</span>) <span>5558</span> <span>1104</span></p>
-                <p data-key="aboutEmail"><b>Email:</b> info@annikiforsi.com</p>
+                <p data-key="aboutEmail" class="margin-bottom-about"><b>Email:</b> info@annikiforsi.com</p>
             </div>
 
             <div class="clients-container page-section">
-                <h1 data-key="clientsTitle">Who we work this</h1>
+                <h1 data-key="clientsTitle">Who we work with</h1>
 
                 <div class="about-text">
                     <p data-key="clientsText"><b>AnnikiForsi</b> provides technical solutions for <b>game and animation studios</b>, helping to optimize production workflows. Our key areas of expertise include <b>rigging, animation, and script development</b>, allowing us to streamline the work of <b>riggers, animators, and modelers</b>.</p>
@@ -165,16 +180,63 @@
             </div>
 
              <div class="tiba-container page-section">
-                <h1 data-key="tibaTitle">Soon</h1>
+                <h1 data-key="tibaTitle">What we are developing</h1>
 
-                <div class="tiba-text">
-                    <p data-key="tibaText">This page is under construction at the moment!</p>
+                <h3 data-key="tibaSubtitle1">A rhythm-based platformer where hand synchronization unlocks new paths.</h3>
+                
+                <div class="tiba-description-container">
+                    <div class="tiba-picture-container">
+                        <img src="img/tiba-picture-one.svg" alt="">
+                        <div class="shine tiba-shine tiba-picture-one-shine"></div>
+                    </div>
+                    <div class="tiba-text-container">
+                        <p data-key="tibaParagraph1">
+                        The player controls two hands: 
+                        <b>the left guides the hero through the world, the right sets the rhythm for him</b>. 
+                        Only synchronized actions let you move faster, jump higher, and reveal the world’s hidden possibilities. 
+                        <b>The more precisely you maintain the rhythm, the more the environment unfolds</b>: hidden objects appear, new paths open, and the whole world begins to breathe in time with you. But the moment you falter, everything collapses at once.
+                        </p>
+
+                        <p data-key="tibaParagraph2">
+                        In Tiba there is no traditional user interface. 
+                        <b>All of the game feedback comes through color, sound, and environmental dynamics</b>. 
+                        This is neither combat nor a race, but a meditative journey where interaction matters more than words. 
+                        The player must <b>not merely follow a path but feel it</b>: tune in, stay attentive and flexible, like the drop itself.
+                        </p>
+                    </div>
                 </div>
+
+                <h3 data-key="tibaSubtitle2">A story about how a lost part of yourself can become your guide.</h3>
+                
+                <div class="tiba-description-container">
+                    <div class="tiba-picture-container">
+                        <img src="img/tiba-picture-two.svg" alt="" class="tiba-picture-two">
+                        <div class="shine tiba-shine tiba-picture-two-shine"></div>
+                    </div>
+                    <div class="tiba-text-container">
+                        <p data-key="tibaParagraph3">
+                        Tiba is a <b>small golden drop</b> that was once whole with a spiky drop named Okas. 
+                        Together they floated as <b>a single liquid cluster in infinite space</b>. 
+                        Then, in an instant, <b>the cosmos tore them apart</b>, and they fell onto the planet’s surface like two raindrops.
+                        </p>
+
+                        <p data-key="tibaParagraph4">
+                        Their connection was broken, and <b>all that remained was the rhythm of their bodies</b>. 
+                        Following it, <b>Tiba seeks to reunite with Okas</b>, while he, in contrast, strives to preserve his solitude.
+                        </p>
+                    </div>
+                </div>
+
+                <h2 data-key="tibaCallToAction">We are looking for partners who will hear the rhythm of this story and help amplify its voice.</h2>
             </div>
 
-            <div class="footer">© 2025 AnnikiForsi
-                <div class="filler-footer-left"></div>
-                <div class="filler-footer-right"></div>
+            </div>
+
+
+            <div class="footer">
+            ©&nbsp;<span id="footer-year"></span>&nbsp;AnnikiForsi
+            <div class="filler-footer-left"></div>
+            <div class="filler-footer-right"></div>
             </div>
         </div>
     
